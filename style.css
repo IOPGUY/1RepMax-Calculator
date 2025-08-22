@@ -20,6 +20,12 @@ body {
     text-align: center;
 }
 
+/* New style for the logo */
+.logo {
+    max-width: 150px; /* You can adjust this size */
+    margin-bottom: 15px;
+}
+
 h1 {
     margin-bottom: 25px;
     color: #333; /* Dark gray text */
@@ -90,7 +96,6 @@ h2 {
     margin: 0;
 }
 
-/* New styles for the percentage table */
 .percentage-table {
     width: 100%;
     margin-top: 25px;
@@ -116,3 +121,4 @@ h2 {
 .percentage-table tr:last-child td {
     border-bottom: none;
 }
+
