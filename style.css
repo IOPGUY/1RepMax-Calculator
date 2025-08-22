@@ -21,8 +21,11 @@ body {
 }
 
 .logo {
-    max-width: 225px; /* You can adjust this size */
+    max-width: 300px; 
     margin-bottom: 15px;
+    /* --- New lines below --- */
+    position: relative;
+    right: 20px; /* Increase this number to move it more to the left */
 }
 
 h1 {
@@ -95,7 +98,6 @@ h2 {
     margin: 0;
 }
 
-/* This is the new style for your note */
 .rounding-note {
     font-size: 12px;
     color: #777;
@@ -128,7 +130,6 @@ h2 {
 .percentage-table tr:last-child td {
     border-bottom: none;
 }
-
 
 
 
