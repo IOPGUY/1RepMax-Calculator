@@ -21,7 +21,7 @@ body {
 }
 
 .logo {
-    max-width: 150px; /* You can adjust this size */
+    max-width: 400px; /* You can adjust this size */
     margin-bottom: 15px;
 }
 
@@ -128,6 +128,7 @@ h2 {
 .percentage-table tr:last-child td {
     border-bottom: none;
 }
+
 
 
 
