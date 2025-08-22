@@ -1,4 +1,13 @@
 /**
+ * Rounds a number to the nearest 5.
+ * @param {number} num The number to round.
+ * @returns {number} The number rounded to the nearest 5.
+ */
+function roundToNearestFive(num) {
+    return Math.round(num / 5) * 5;
+}
+
+/**
  * Calculates the estimated 1-Rep Max (1RM) and percentage breakdown.
  * @param {string} formulaName - The name of the formula to use ('brzycki' or 'epley').
  */
@@ -17,21 +26,24 @@ function calculate1RM(formulaName) {
         alert("Calculations are most accurate for 12 reps or fewer.");
     }
 
-    let oneRepMax = 0;
+    let oneRepMaxRaw = 0;
 
     // 3. Calculate 1RM based on the selected formula.
     if (formulaName === 'brzycki') {
-        oneRepMax = weight / (1.0278 - (0.0278 * reps));
+        oneRepMaxRaw = weight / (1.0278 - (0.0278 * reps));
     } else if (formulaName === 'epley') {
-        oneRepMax = weight * (1 + (reps / 30));
+        oneRepMaxRaw = weight * (1 + (reps / 30));
     }
+    
+    // **NEW**: Round the final 1RM to the nearest 5.
+    const oneRepMaxRounded = roundToNearestFive(oneRepMaxRaw);
 
     // 4. Display the main 1RM result.
     const resultElement = document.getElementById('result-text');
-    resultElement.textContent = `${oneRepMax.toFixed(2)} lbs/kg`;
+    resultElement.textContent = `${oneRepMaxRounded} lbs/kg`;
 
-    // 5. Calculate and display the percentage breakdown.
-    generatePercentageTable(oneRepMax);
+    // 5. Calculate and display the percentage breakdown using the rounded 1RM.
+    generatePercentageTable(oneRepMaxRounded);
 }
 
 /**
@@ -56,24 +68,24 @@ function generatePercentageTable(oneRepMax) {
     const tableBody = document.getElementById('percentage-body');
     const percentageTable = document.getElementById('percentage-table');
     
-    // Clear any previous results
     tableBody.innerHTML = '';
 
-    // Populate the table with new results
     percentageData.forEach(item => {
         const weightForPercent = (oneRepMax * item.percent) / 100;
+        
+        // **NEW**: Round the percentage weight to the nearest 5.
+        const roundedWeight = roundToNearestFive(weightForPercent);
         
         const row = document.createElement('tr');
         
         row.innerHTML = `
             <td>${item.reps}</td>
             <td>${item.percent}%</td>
-            <td>${weightForPercent.toFixed(2)}</td>
+            <td>${roundedWeight}</td>
         `;
         
         tableBody.appendChild(row);
     });
 
-    // Make the table visible
     percentageTable.style.display = 'table';
 }
