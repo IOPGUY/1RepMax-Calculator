@@ -4,23 +4,25 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5;
+    background-color: #f4f4f4; /* Light gray background */
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .calculator {
-    background-color: #ffffff;
+    background-color: #ffffff; /* White card */
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     text-align: center;
 }
 
 h1 {
     margin-bottom: 25px;
-    color: #333;
+    color: #333; /* Dark gray text */
 }
 
 .input-group {
@@ -32,7 +34,7 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #555;
+    color: #555; /* Medium gray text */
 }
 
 input[type="number"] {
@@ -40,7 +42,7 @@ input[type="number"] {
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    box-sizing: border-box; /* Important for padding */
+    box-sizing: border-box;
     font-size: 16px;
 }
 
@@ -51,11 +53,11 @@ input[type="number"] {
 }
 
 button {
-    flex: 1; /* Make buttons take equal space */
+    flex: 1;
     padding: 12px;
     border: none;
     border-radius: 8px;
-    background-color: #007bff;
+    background-color: #333; /* Black button */
     color: white;
     font-size: 16px;
     font-weight: bold;
@@ -64,14 +66,15 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #555; /* Darker gray on hover */
 }
 
 .result-container {
     margin-top: 20px;
     padding: 20px;
-    background-color: #e9ecef;
+    background-color: #f9f9f9; /* Very light gray background */
     border-radius: 8px;
+    text-align: center;
 }
 
 h2 {
@@ -83,6 +86,33 @@ h2 {
 #result-text {
     font-size: 28px;
     font-weight: bold;
-    color: #007bff;
+    color: #000;
     margin: 0;
+}
+
+/* New styles for the percentage table */
+.percentage-table {
+    width: 100%;
+    margin-top: 25px;
+    border-collapse: collapse;
+    display: none; /* Hidden by default */
+}
+
+.percentage-table th, .percentage-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.percentage-table th {
+    background-color: #333;
+    color: white;
+}
+
+.percentage-table td {
+    color: #555;
+}
+
+.percentage-table tr:last-child td {
+    border-bottom: none;
 }
