@@ -35,7 +35,7 @@ function calculate1RM(formulaName) {
         oneRepMaxRaw = weight * (1 + (reps / 30));
     }
     
-    // **NEW**: Round the final 1RM to the nearest 5.
+    // Round the final 1RM to the nearest 5.
     const oneRepMaxRounded = roundToNearestFive(oneRepMaxRaw);
 
     // 4. Display the main 1RM result.
@@ -73,7 +73,7 @@ function generatePercentageTable(oneRepMax) {
     percentageData.forEach(item => {
         const weightForPercent = (oneRepMax * item.percent) / 100;
         
-        // **NEW**: Round the percentage weight to the nearest 5.
+        // Round the percentage weight to the nearest 5.
         const roundedWeight = roundToNearestFive(weightForPercent);
         
         const row = document.createElement('tr');
